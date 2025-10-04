@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* Fondo Azul Profundo (Medianoche) */
+    background-color: #0d47a1; 
+    font-family: 'Arial', sans-serif;
+    color: #e3f2fd; 
+    text-align: center;
+    overflow: hidden; 
+}
+
+/* Oculta el contenido inicial */
+.hidden {
+    display: none;
+}
+
+/* ------------------ ESTILOS DE INICIO/BOTÓN ------------------ */
+
+#startButton {
+    background-color: #4fc3f7; 
+    color: #0d47a1; 
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 25vh; 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 5px 20px rgba(79, 195, 247, 0.5); 
+}
+
+#startButton:hover {
+    background-color: #81d4fa;
+    transform: scale(1.05);
+}
+
+/* ------------------ ESTILOS DEL CONTENIDO ROMÁNTICO ------------------ */
+
+.content {
+    position: relative;
+    z-index: 10; 
+    padding: 20px;
+}
+
+h1 {
+    color: #00e5ff; 
+    font-size: 2.8em; 
+    margin-top: 50px;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.8), 0 0 20px rgba(0, 229, 255, 0.5); 
+}
+
+.frases-container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 35px;
+    background-color: rgba(13, 71, 161, 0.9); 
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); 
+    border: 1px solid #00e5ff; 
+}
+
+/* Reglas CLAVE para la animación de frases: */
+.frase {
+    font-style: italic;
+    margin: 18px 0;
+    color: #e3f2fd; 
+    font-size: 1.3em; 
+    
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(10px); /* Posición inicial ligeramente baja */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Transición suave */
+}
+
+.frase.visible {
+    opacity: 1; /* Se vuelve visible */
+    transform: translateY(0); /* Vuelve a su posición normal */
+}
+
+.music-player {
+    margin-top: 60px;
+}
+
+.music-player h2 {
+    color: #00e5ff;
+    margin-bottom: 15px;
+}
+
+.nota {
+    font-size: 0.9em;
+    color: #aeb4e2; 
+}
+
+/* ------------------ ESTILOS DE CORAZONES QUE CAEN ------------------ */
+
+#heart-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 1; 
+}
+
+.heart {
+    position: absolute;
+    color: #00e5ff; 
+    font-size: 22px; 
+    animation: fall linear infinite;
+    opacity: 0.85; 
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.9), 0 0 15px rgba(0, 229, 255, 0.6);
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+/* ------------------ CORAZONES FIJOS EN LAS ESQUINAS ------------------ */
+
+.corner-heart {
+    position: fixed;
+    color: #00e5ff; 
+    font-size: 80px;
+    z-index: 15; 
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+    pointer-events: none; 
+}
+
+.corner-heart.top-left {
+    top: 20px;
+    left: 20px;
+    transform: rotate(-20deg); 
+}
+
+.corner-heart.top-right {
+    top: 20px;
+    right: 20px;
+    transform: rotate(20deg);
+}
+
+.corner-heart.bottom-left {
+    bottom: 20px;
+    left: 20px;
+    transform: rotate(20deg);
+}
+
+.corner-heart.bottom-right {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(-20deg);
+}
